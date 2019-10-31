@@ -49,13 +49,13 @@ class MainActivity : AppCompatActivity() {
         }
 
         override fun getPageTitle(position: Int): CharSequence? {
-            return "Item " + (position + 1)
+            return "Page: Item${position + 1}"
         }
 
         override fun instantiateItem(container: ViewGroup, position: Int): Any {
             val view = LayoutInflater.from(container.context).inflate(R.layout.pager_item, container, false)
             container.addView(view)
-            view.item_title.text = getPageTitle(position)
+            view.item_subtitle.text = getPageTitle(position)
             return view
         }
 
